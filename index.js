@@ -14,7 +14,6 @@ if (message.content.startsWith(config.prefix + "ping")) {
 const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
 }});
-client.login(config.token);
 if (message.content.startsWith(config.prefix + "math")) {
     if (!args[0]) return message.channel.send("Please input a valid equation or calculation!");
     let resp;
@@ -31,3 +30,4 @@ if (message.content.startsWith(config.prefix + "math")) {
     .addField("Output", `\`\`\`js\n${resp}\`\`\``)
     message.channel.send(mathembed)
 }
+client.login(process.env.token);
