@@ -4,7 +4,7 @@ const config = require("./config.json")
 const math = require("mathjs");
 client.on("ready", () => {
     console.log("Ready!")
-    client.user.setActivity("tping")
+    client.user.setActivity("t!ping")
 });
 client.on("message", async message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
