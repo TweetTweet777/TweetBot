@@ -23,7 +23,7 @@ if (message.content.startsWith(config.prefix + "math")) {
     } catch (e) {
         return message.channel.send("Please input a valid equation or calculation!");
     }
-    const mathembed = new Discord.MessageEmbed()
+    const mathembed = new Discord.RichEmbed()
     .setColour(0xFFA500)
     .setTitle(message.author.username, message.author.avatarURL)
     .setDescription("Math Calculation!")
