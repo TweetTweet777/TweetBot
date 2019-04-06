@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json")
-const math = require("mathjs");
 client.on("ready", () => {
     console.log("Ready!")
     client.user.setActivity("t!ping")
@@ -13,21 +12,6 @@ client.on("message", async message => {
 if (message.content.startsWith(config.prefix + "ping")) {
 const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-} if (message.content.startsWith(config.prefix + "math")) {
-    if (!args[0]) return message.channel.send("Please input a valid equation or calculation!");
-    let resp;
-    try {
-      resp = math.eval(args.join(" "));
-    } catch (e) {
-      return message.channel.send("Please input a valid equation or calculation!");
-    }
-const mathembed = new Discord.RichEmbed()
-.setColor(0xFFA500)
-.setTitle("Math Calculation")
-.setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
-.addField("Input", `\`\`\`js\n${args.join("")}\`\`\``)
-.addField("Output", `\`\`\`js\n${resp}\`\`\``)
-message.channel.send(mathembed)
 
 } if (message.content.startsWith(config.prefix + "uptime")) {
 let totalSeconds = (client.uptime / 1000);
