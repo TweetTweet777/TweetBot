@@ -25,5 +25,34 @@ message.channel.send({embed:{
     color:0xFFA500,
     description: uptime
 }});
+} if (message.content.startsWith(config.prefix + "help")) {
+    message.channel.send({embed: {
+      color: 0xFFA500,
+      author: {
+        name: "TweetBot",
+        icon_url: client.user.avatarURL
+      },
+      title: "Help Menu",
+      description: "Tweet Help",
+      fields: [{
+          name: "Help",
+          value: "Brings up this help menu."
+        },
+        {
+          name: "Ping",
+          value: "Shows the latency and API latency of the bot."
+        },
+        {
+          name: "Uptime",
+          value: "Shows the uptime of the bot"
+        },
+      ],
+      timestamp: new Date(),
+      footer: {
+        icon_url: client.user.avatarURL,
+        text: "Created by ILIKETRAINS#9460"
+      }
+    } 
+  });
 }});
 client.login(process.env.token);
