@@ -54,7 +54,7 @@ message.channel.send({embed:{
       timestamp: new Date(),
       footer: {
         icon_url: client.user.avatarURL,
-        text: "Created by ILIKETRAINS#9460 and Brickman#4669"
+        text: "Created by ILIKETRAINS#9460, Brickman#4669 and Excigma#3904"
       }
     } 
   });
