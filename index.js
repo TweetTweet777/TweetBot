@@ -78,4 +78,4 @@ message.channel.send({embed:{
   message.channel.send(esayEmbed);
 }
 );
-client.login(process.env.token);
+client.login(process.env.token)
