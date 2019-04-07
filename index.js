@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json")
-const randomPuppy = require('random-puppy');
 client.on("ready", () => {
     console.log("Ready!")
     client.user.setActivity("t!ping")
@@ -59,15 +58,6 @@ message.channel.send({embed:{
       }
     } 
   });
-} if (message.content.startsWith(config.prefix + "puppy")) {
-    randomPuppy('memes')
-    .then(url => {
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setImage(url)
-            .setColor('0xFFA500')
-        message.channel.send(embed);
-    });
 }
 });
 client.login(process.env.token);
