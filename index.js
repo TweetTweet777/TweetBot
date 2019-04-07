@@ -66,9 +66,9 @@ message.channel.send({embed:{
 
       let servIcon = message.guild.iconURL;
       let esayEmbed = new Discord.RichEmbed()
-      .setTitle("Say")
+      .setTitle("Say Something:")
       .setColor("0xFFA500")
-      .setThumbnail(client.user.avatarURL)
+      .setThumbnail(message.author.avatarURL)
       .setDescription(`Said by ${message.author}`)
       .addField("Message", `${sayMessage}`)
       .setTimestamp();
