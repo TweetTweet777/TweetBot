@@ -108,7 +108,7 @@ message.channel.send({embed:{
   message.channel.send({embed});
 
 
-  } if (message.content.startsWith(config.prefix + "bi")) {
+  } if (message.content.startsWith(config.prefix + "botinfbi")) {
     message.channel.send({embed: {
       color: 0xFFA500,
       author: {
@@ -133,7 +133,7 @@ message.channel.send({embed:{
         },
         {
           name: "Commands:",
-          value: "15 Commands"
+          value: "6 Commands"
         },
       ],
         timestamp: new Date(),
@@ -149,7 +149,7 @@ message.channel.send({embed:{
         icon_url: client.user.avatarURL
       },
       title: "Bot info",
-      description: "Info one the Heartstring Bot",
+      description: "Info one the TweetBot",
       fields: [{
           name: "Users",
           value: `${client.users.size}`
