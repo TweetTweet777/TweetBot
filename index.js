@@ -58,6 +58,24 @@ message.channel.send({embed:{
       }
     } 
   });
+} if (message.content.startsWith(config.prefix + "say"))
+  const sayMessage = args.join(" ");
+
+  let servIcon = message.guild.iconURL;
+  let esayEmbed = new Discord.RichEmbed()
+  .setTitle("Say Something")
+  .setColor("0xFFA500")
+  .setThumbnail(message.author.avatarURL)
+  .setDescription(`Said by ${message.author}`)
+  .addField("Message", `${sayMessage}`)
+  .setTimestamp();
+
+  const esayMessage = args.join(" ");
+  // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+  message.delete().catch(O_o=>{});
+  // And we get the bot to say the thing:
+
+  message.channel.send(esayEmbed);
 }
-});
+);
 client.login(process.env.token);
